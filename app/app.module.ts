@@ -5,12 +5,13 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { DetalheComponent } from '../pages/detalhe/detalhe.component';
-
+import { CadastroComponent } from '../pages/cadastro/cadastro.component';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetalheComponent
+    DetalheComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,8 @@ import { DetalheComponent } from '../pages/detalhe/detalhe.component';
   entryComponents: [
     MyApp,
     HomePage,
-    DetalheComponent
+    DetalheComponent,
+    CadastroComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}
