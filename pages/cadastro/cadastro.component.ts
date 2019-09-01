@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavController } from 'ionic-angular';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  nome : string ='';
+  curso : string ='';
+
+  constructor(public navCtrl : NavController) { }
 
   ngOnInit() {
   }
 
+
+  cadastrar(){
+    this.navCtrl.push(HomePage, {nome : this.nome, curso: this.curso});
+  }
 }

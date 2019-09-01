@@ -1,3 +1,19 @@
-<p>
-cadastro works!
-</p>
+<h2>Novo Aluno</h2>
+<ion-item>
+<ion-label >Nome:</ion-label>
+<ion-input placeholder ="Digite o nome do aluno" [(ngModel)]="nome" name="nome"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label >Curso:</ion label>
+<ion-select [(ngModel)]="curso" name ="bairro">
+<ion-option value ="Direito">Direito</ion-option>
+<ion-option value ="Sistemas para Internet">Sistemas para internet</ion-option>
+<ion-option value ="Ciência da Computação">Ciência da Computação</ion-option>
+<ion-option value ="Outro">Outro </ion-option>
+</ion-select>
+</ion-item>
+
+<ion-item>
+<button ion-button (click)="cadastrar()">Cadastrar</button >
+</ion-item>

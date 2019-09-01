@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { DetalheComponent } from '../detalhe/detalhe.component';
+import { CadastroComponent } from '../cadastro/cadastro.component';
 import alunos from './alunos.json';
 
 @Component({
@@ -9,15 +10,29 @@ import alunos from './alunos.json';
 })
 export class HomePage {
 
-  alunos : [];
+  alunos : any[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.alunos = alunos.alunos;
+
+    var nome = this.navParams.get('nome');
+    var curso = this.navParams.get('curso');
+    if(nome && curso){
+        var novo ={
+          id : this.alunos.length + 1,
+          nome : nome,
+          curso : curso
+        };
+        this.alunos.push(novo);
+        console.log(novo);
+    }
   }
 
   seleciona( x ){
     console.log(x);
     this.navCtrl.push(DetalheComponent, {aluno : x});
   }
-
+  Adiciona(){
+    this.navCtrl.push(CadastroComponent);
+  }
 }
