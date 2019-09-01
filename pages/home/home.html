@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Alunos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let a of alunos" (click)="seleciona(a)">
+    <h1>{{a.nome}}</h1>
+    <h6>Curso: {{a.curso}}</h6>
+  </ion-item>
+</ion-list>
+  
+
+  <ion-fab bottom right>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
