@@ -21,6 +21,7 @@ export class HomePage {
         var novo ={
           id : this.alunos.length + 1,
           nome : nome,
+          teste : this.alunos.length,
           curso : curso
         };
         this.alunos.push(novo);
