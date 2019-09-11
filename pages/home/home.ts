@@ -20,7 +20,6 @@ export class HomePage {
     if(nome && curso){
         var novo ={
           id : this.alunos.length + 1,
-          teste : this.alunos.length,
           nome : nome,
           curso : curso
         };
